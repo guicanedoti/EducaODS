@@ -29,10 +29,10 @@ Para manter os adolescentes engajados, aplicamos princípios de design inspirado
 
 ## 🚀 Tecnologias Utilizadas (Previsão - será atualizado conforme o desenvolvimento)
 
-* **Front-end:** (Ainda a definir - ex: React, Vue.js, Angular, HTML5, CSS3, JavaScript)
-* **Back-end:** (Ainda a definir - ex: Node.js, Python/Django, PHP/Laravel)
-* **Banco de Dados:** (Ainda a definir - ex: PostgreSQL, MySQL, MongoDB)
-* **Hospedagem:** (Ainda a definir - ex: Vercel, Netlify, Heroku, AWS S3 para Front-end; Google Cloud Run, AWS EC2 para Back-end)
+* **Front-end:** HTML, CSS, JavaScript com React ou Vue.js
+* **Back-end:** Python com Django
+* **Banco de Dados:** PostgreSQL
+* **Hospedagem:** Vercel/Netlify (Front-end) + Render.com/Railway.app (Back-end/BD)
 * **Controle de Versão:** Git & GitHub
 
 ## 🛠️ Como Rodar o Projeto Localmente (Instruções Detalhadas)
