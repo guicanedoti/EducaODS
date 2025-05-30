@@ -1,5 +1,5 @@
 # educaods/docker-compose.yml
-version: '3.8'
+
 
 services:
   db:
@@ -11,16 +11,16 @@ services:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
     ports:
-      - "5432:5432" 
+      - "5432:5432"
     healthcheck: # Verifica se o DB está pronto para receber conexões
-      test: ["CMD-HEALTCHECK", "pg_isready", "-U", "${DB_USER}", "-d", "${DB_NAME}"]
+      test: ["CMD", "pg_isready", "-U", "${DB_USER}", "-d", "${DB_NAME}"]
       interval: 5s
       timeout: 5s
       retries: 5
 
   backend:
     build:
-      context: ./backend 
+      context: ./backend
       dockerfile: Dockerfile
     command: python manage.py runserver 0.0.0.0:8000 # Comando para iniciar o servidor Django
     volumes:
@@ -35,19 +35,19 @@ services:
     env_file:
       - ./.env # Carrega as variáveis de ambiente do arquivo .env
 
-  frontend:
-    build:
-      context: ./frontend # Indica onde o Dockerfile para o frontend estará
-      dockerfile: Dockerfile
-    command: npm run serve # Comando para iniciar o servidor de desenvolvimento Vue.js
-    volumes:
-      - ./frontend:/app
-    ports:
-      - "8080:8080" # Porta para acessar o Vue.js
-    depends_on:
-      - backend # Garante que o backend esteja iniciado antes de iniciar o frontend
-    env_file:
-      - ./.env # Carrega as variáveis de ambiente
+  # frontend: # Serviço de frontend (Vue.js) - COMENTADO TEMPORARIAMENTE
+  #   build:
+  #     context: ./frontend # Indica onde o Dockerfile para o frontend estará
+  #     dockerfile: Dockerfile
+  #   command: npm run serve # Comando para iniciar o servidor de desenvolvimento Vue.js
+  #   volumes:
+  #     - ./frontend:/app
+  #   ports:
+  #     - "8080:8080" # Porta para acessar o Vue.js
+  #   depends_on:
+  #     - backend # Garante que o backend esteja iniciado antes de iniciar o frontend
+  #   env_file:
+  #     - ./.env # Carrega as variáveis de ambiente
 
 volumes:
   postgres_data: # Volume para persistir os dados do PostgreSQL
