@@ -9,12 +9,11 @@ __pycache__/
 venv/
 env/
 *.env/
-backend_env/ # Seu ambiente virtual Python
+backend_env/ 
 
 # Django
-db.sqlite3 # Se você usar SQLite em algum momento
-media/ # Pasta de upload de mídias (geralmente gerenciada separadamente)
-static_root/ # Pasta de arquivos estáticos coletados (Django)
+db.sqlite3 
+static_root/ 
 *.log
 local_settings.py # Se você tiver um arquivo de settings local para overrides
 
