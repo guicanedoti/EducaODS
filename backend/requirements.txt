@@ -1,0 +1,5 @@
+# educaods/backend/requirements.txt
+
+Django>=5.0
+djangorestframework>=3.16
+psycopg2-binary>=2.9 
