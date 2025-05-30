@@ -8,7 +8,7 @@ __pycache__/
 .Python/
 venv/
 env/
-*.env/
+.env/
 backend_env/ 
 
 # Django
